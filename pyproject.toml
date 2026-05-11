@@ -3,7 +3,7 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "genie-scx-py"
+name = "AOE2-GenieSCX"
 version = "0.1.0"
 description = "Pure-Python port of the Rust genie-scx scenario parser (legacy AoE II .scn/.scx containers)."
 readme = "README.md"
@@ -20,9 +20,9 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/UnluckyForSome/genie-scx-py"
-Repository = "https://github.com/UnluckyForSome/genie-scx-py"
+Homepage = "https://github.com/UnluckyForSome/AOE2-GenieSCX"
+Repository = "https://github.com/UnluckyForSome/AOE2-GenieSCX"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["genie_scx_py*"]
+include = ["aoe2_geniescx*"]
