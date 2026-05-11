@@ -6,7 +6,7 @@ from pathlib import Path
 from typing import Optional
 
 # Scenario "data" version: first `f32` inside the compressed payload (after `next_object_id`).
-# Values >= this threshold match Definitive Edition scenario files; aoe2_geniescx rejects them at parse time.
+# Values >= this threshold match Definitive Edition scenario files; aoe2_mcgeniescx rejects them at parse time.
 DEFINITIVE_EDITION_MIN_DATA_VERSION = 1.28
 
 
@@ -39,7 +39,7 @@ class DefinitiveEditionScenarioError(ValueError):
         suffix = f" ({', '.join(bits)})" if bits else ""
         super().__init__(
             f"It looks like you're trying to parse a Definitive Edition scenario{suffix}. "
-            "aoe2_geniescx only supports legacy Age of Empires II scenarios; try AoE2ScenarioParser instead."
+            "aoe2_mcgeniescx only supports legacy Age of Empires II scenarios; try AoE2ScenarioParser instead."
         )
         self.data_version = data_version
         self.container_format = container_format

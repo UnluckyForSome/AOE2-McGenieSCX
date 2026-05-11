@@ -1,8 +1,8 @@
 """
 Pure-Python port of the Rust crate `genie-scx`.
 
-Maintained as the standalone package **AOE2-GenieSCX**
-(https://github.com/UnluckyForSome/AOE2-GenieSCX). Use from AoE2ScenarioParser legacy bridge,
+Maintained as the standalone package **AOE2-McGenieSCX**
+(https://github.com/UnluckyForSome/AOE2-McGenieSCX). Use from AoE2ScenarioParser legacy bridge,
 McMinimap, or any tool that needs legacy `.scn` / `.scx` parsing in-process.
 """
 

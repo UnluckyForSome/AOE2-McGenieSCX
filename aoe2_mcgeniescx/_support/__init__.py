@@ -1,7 +1,7 @@
 """
 Python port of the Rust crate `genie-support`.
 
-This package is internal to the `aoe2_geniescx` port and intentionally mirrors the
+This package is internal to the `aoe2_mcgeniescx` port and intentionally mirrors the
 API surface used by the Rust `genie-scx` crate.
 """
 
