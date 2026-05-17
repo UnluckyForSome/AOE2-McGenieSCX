@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import struct
 from dataclasses import dataclass
 from enum import Enum
 from pathlib import Path
@@ -89,9 +90,15 @@ class CannotDisableBuildingsError(ValueError):
         super().__init__("requested version does not support disabling buildings")
 
 
+def normalize_scenario_data_version(raw: float) -> float:
+    """Canonical display/compare value for payload data version (f32 on disk, 2 dp in game)."""
+    f32 = struct.unpack("<f", struct.pack("<f", float(raw)))[0]
+    return round(f32, 2)
+
+
 def is_definitive_edition_scenario_data_version(data: float) -> bool:
     """True if ``data`` is the scenario payload version and indicates DE."""
-    return float(data) >= DEFINITIVE_EDITION_MIN_DATA_VERSION
+    return normalize_scenario_data_version(data) >= DEFINITIVE_EDITION_MIN_DATA_VERSION
 
 
 @dataclass(frozen=True, slots=True)

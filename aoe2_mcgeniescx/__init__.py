@@ -24,6 +24,7 @@ from .types import (
     is_ascii_scx_version_prefix,
     is_definitive_edition_container_format,
     is_definitive_edition_scenario_data_version,
+    normalize_scenario_data_version,
     legacy_format_version_from_prefix,
     legacy_format_version_peek_path,
 )
@@ -45,6 +46,7 @@ __all__ = [
     "is_ascii_scx_version_prefix",
     "is_definitive_edition_container_format",
     "is_definitive_edition_scenario_data_version",
+    "normalize_scenario_data_version",
     "legacy_format_version_from_prefix",
     "legacy_format_version_peek_path",
     "DecodeStringError",

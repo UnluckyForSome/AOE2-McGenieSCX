@@ -42,6 +42,7 @@ from .types import (
     is_ascii_scx_version_prefix,
     is_definitive_edition_container_format,
     is_definitive_edition_scenario_data_version,
+    normalize_scenario_data_version,
 )
 from .victory import LegacyVictoryInfo, VictoryInfo
 from ._support.ids import UnitTypeID
@@ -672,7 +673,9 @@ class SCXFormat:
         payload = inflate_raw(compressed)
         if len(payload) < 8:
             raise EOFError("scenario payload too short")
-        scenario_data_version = struct.unpack_from("<f", payload, 4)[0]
+        scenario_data_version = normalize_scenario_data_version(
+            struct.unpack_from("<f", payload, 4)[0]
+        )
         if is_definitive_edition_scenario_data_version(scenario_data_version):
             raise DefinitiveEditionScenarioError(data_version=scenario_data_version)
         buf = io.BytesIO(payload)
